@@ -20,6 +20,10 @@
  */
 @property (nonatomic ,assign) BOOL isPhoneNumberWordLimit;
 /**
+ *  isPhoneNumberWordLimit为YES时,如果需要将11位不是你想要的修改这个就行了，给你想限制多少数字以内,默认是11位
+ */
+@property (nonatomic ,assign) int PhoneNumberWordLimitInt;
+/**
  *  正则判断手机号码地址格式
  *  如果需要判断textField的text是否是手机号调用这个方法;
  *  @return

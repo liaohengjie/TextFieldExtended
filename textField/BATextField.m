@@ -27,6 +27,7 @@
         _textField=textField;
         _cnInt =8;
         _enInt =12;
+        _PhoneNumberWordLimitInt=11;
     }
     
     return self;
@@ -85,7 +86,7 @@
         }
         if(_isPhoneNumberWordLimit ==YES)
         {
-            if (strLength >11) {
+            if (strLength >_PhoneNumberWordLimitInt) {
                 NSLog(@"手机号是11位数的");
                 return NO;
             }
