@@ -16,7 +16,7 @@
  */
 @property (nonatomic ,assign) BOOL isNumber;
 /**
- *  isNumber为YES时,友情提示是否再需要限制为手机号11位
+ *  isNumber为YES时,友情提示：YES限制输入数字为11位
  */
 @property (nonatomic ,assign) BOOL isPhoneNumberWordLimit;
 /**
@@ -24,7 +24,7 @@
  *  如果需要判断textField的text是否是手机号调用这个方法;
  *  @return
  */
-- (BOOL)isValidPhone:(NSString*)number;
+- (BOOL)isValidPhone;
 
 
 

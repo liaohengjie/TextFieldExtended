@@ -19,6 +19,7 @@
     [super viewDidLoad];
     BATextField *text =[[BATextField alloc]initWithFrame:(CGRect){10,100,200,50}];
     text.isNumber=YES;
+    text.isPhoneNumberWordLimit=YES;
     text.textField.placeholder=@"请输入手机号";
     text.textField.backgroundColor=[UIColor lightGrayColor];
     [self.view addSubview:text];
@@ -40,7 +41,7 @@
         NSLog(@"手机号11位,你特么在逗我?");
         return;
     }
-    BOOL is = [_text isValidPhone:_text.textField.text];
+    BOOL is = [_text isValidPhone];
     if (is) {
         NSLog(@"真");
     }else

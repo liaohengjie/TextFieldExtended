@@ -25,11 +25,8 @@
         textField.delegate=self;
         [self addSubview:textField];
         _textField=textField;
-        
         _cnInt =8;
         _enInt =12;
-        
-        
     }
     
     return self;
@@ -59,6 +56,7 @@
 {
     _enInt=enInt;
 }
+
 -(void)setIsNumber:(BOOL)isNumber
 {
     _isNumber=isNumber;
@@ -66,7 +64,9 @@
         _textField.keyboardType=UIKeyboardTypeNumberPad;
     }
 }
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    return [textField resignFirstResponder];
+}
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     
@@ -180,7 +180,7 @@
 }
 
 
-- (BOOL)isValidPhone:(NSString *)number
+- (BOOL)isValidPhone
 {
     
     /**
@@ -219,10 +219,10 @@
     NSPredicate *regextestcu = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CU];
     NSPredicate *regextestct = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CT];
     
-    if (([regextestmobile evaluateWithObject:number] == YES)
-        || ([regextestcm evaluateWithObject:number] == YES)
-        || ([regextestct evaluateWithObject:number] == YES)
-        || ([regextestcu evaluateWithObject:number] == YES))
+    if (([regextestmobile evaluateWithObject:self.textField.text] == YES)
+        || ([regextestcm evaluateWithObject:self.textField.text] == YES)
+        || ([regextestct evaluateWithObject:self.textField.text] == YES)
+        || ([regextestcu evaluateWithObject:self.textField.text] == YES))
     {
         return YES;
     }
